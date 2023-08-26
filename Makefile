@@ -1,7 +1,7 @@
 one: 
 	gcc -c raw_packets.cpp -std=c++11 -o one.out
 	./one.out
-	
+
 two:
 	g++ -std=c++11 -o ./hey ./hello.cpp
 	./hey
@@ -44,3 +44,20 @@ mongo5:
 	-I/usr/local/include/bsoncxx/v_noabi \
 	-L/usr/local/lib -lmongocxx -lbsoncxx
 	./output/mongo
+
+
+zeromq1:
+	g++ --std=c++11 -o ./output/zeromq zeromq.cpp $(pkg-config --libs libzmq) -I/opt/homebrew/Cellar/zeromq/4.3.4/include \
+	-L/usr/local/lib -lmongocxx -lbsoncxx
+	./output/mongo
+
+zeromq:
+	g++ --std=c++11 -o ./output/zeromq zeromq.cpp -I/opt/homebrew/Cellar/zeromq/4.3.4/include
+	./output/mongo
+
+student:
+	g++ --std=c++11 -o ./output/student \
+	./output/student_management_/main.cpp \
+	-I/usr/local/include/mongocxx/v_noabi \
+	-I/usr/local/include/bsoncxx/v_noabi
+	./output/student
