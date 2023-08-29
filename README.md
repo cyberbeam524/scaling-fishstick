@@ -15,7 +15,7 @@ Select "Wireshark" -> "About Wireshark" -> "Folders" -> "Personal Lua Plugins". 
 
 ### 3. Reloading Lua Plugin
 Reload the lua plugin by clicking
-![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/reload_plugin.jpg)
+<img src="./images/reload_plugin.jpg" style="width:50%">
 
 ### 4. Viewing New Protocol Dissector
 By selecting "Analyse" -> "Enable Protocols", you should be able to search for the newly loaded protocol "MONGODB" with description "MongoDB Protocol2". 
@@ -32,7 +32,7 @@ python insert_mongo.py
 
 ### 6. Viewing Packet's Decoded Buffer
 Double click on a row and you should be able to see the details of that packet as described by the custom lua script.
-![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/detailed_packets.jpg)
+<img src="./images/detailed_packets.jpg" style="width:50%">
 
 
 ## Decoding message with custom lua script
