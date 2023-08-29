@@ -4,11 +4,6 @@
 # include <fstream>  
 # include <stdio.h>  
 # include <string.h>  
-// custom header file:
-// # include "mongodbobjects.h"
-// # include "my_header_file.h"
-#include "perfect_numbers.h"
-#include "queen_attack.h"
 
 #include <bsoncxx/json.hpp>
 #include <bsoncxx/builder/basic/document.hpp>
@@ -25,6 +20,8 @@ using bsoncxx::builder::basic::make_document;
 using namespace std;  
 
 class Inventory {
+    // handles all mongodb application operations 
+    // after inputs are taken from console presentation layer
   public:
     int speed(int maxSpeed);
     mongocxx::database db;
@@ -33,8 +30,6 @@ class Inventory {
     mongocxx::instance instance{};
     mongocxx::client client;
     Inventory(string dbName, string tableName) {
-//   return maxSpeed;
-        // mongocxx::instance instance{};
         mongocxx::uri uri("mongodb://localhost:27017");
         mongocxx::client client(uri);
         this->uri = std::move(uri);
@@ -45,7 +40,6 @@ class Inventory {
 
     };
     void insert_inventory(string name, string expiryName, int quantity) {
-        // if (this->collection != NULL) cout << "its empty";
         auto insert_one_result = this->collection.insert_one(
             make_document(kvp("Item Name", name),
                         kvp("Expiration Date", expiryName),
@@ -58,7 +52,7 @@ class Inventory {
     void print_inventory(){
         auto cursor_all = this->collection.find({});
         std::cout << "Collection '" << this->collection.name()
-                  << "' contains these documents:" << std::endl;
+            << "' contains these documents:" << std::endl;
         for (auto doc : cursor_all) {
             std::cout << bsoncxx::to_json(doc, bsoncxx::ExtendedJsonMode::k_relaxed) << std::endl;
         }
@@ -95,20 +89,10 @@ void writeEntry(){
 }
 int main()
 {
-
-    // mongocxx::instance instance{};
-    // mongocxx::uri uri("mongodb://localhost:27017");
-    // mongocxx::client client(uri);
-    // auto db = client["mydb2"];
-    // auto collection = db["inventory2"];
-
-    string dbName = "mydb";
-    string tableName = "inventory";
+    string dbName = "mydb"; string tableName = "inventory"; int option = 0;
+    // Inventory object to handle application layer operations
     Inventory inventory(dbName, tableName);
-    // auto db = inventory.db;
-    // auto collection = inventory.collection;
-    int option = 0;
-
+    
     while (option != 6 ) {  
     // This prints out all the available options in the DB
     cout << " \n Available operations: \n1. Add New "  
