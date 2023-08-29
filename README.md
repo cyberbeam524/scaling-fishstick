@@ -17,7 +17,7 @@ Select "Wireshark" -> "About Wireshark" -> "Folders" -> "Personal Lua Plugins". 
 ### 3. Reloading Lua Plugin
 Reload the lua plugin by clicking
 
-<img src="./images/reload_plugin.jpg" style="width:50%">
+<img src="./images/reload_plugin.jpg" style="width:25%">
 
 ### 4. Viewing New Protocol Dissector
 By selecting "Analyse" -> "Enable Protocols", you should be able to search for the newly loaded protocol "MONGODB" with description "MongoDB Protocol2".
