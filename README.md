@@ -48,8 +48,7 @@ mongodb.lua - Sample lua script for decoding Mongodb message packets sniffed fro
 
 The lua script decodes the packet by checking the buffer slice and converting it to a signed integer (int32) data type. For instance, on line 18, from index 0 to 4 lies i32 number for the message length of the packet. Similarly, from index 4 to 8 lies i32 number for the request id of the packet.
 
-![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/buffer_reading.jpg)
-
+<img src="./images/buffer_reading.jpg" style="width:70%">
 
 ### Useful resources:
 https://engrsalmanshaikh.wordpress.com/2014/12/09/network-packet-sniffer-c/
