@@ -11,18 +11,22 @@ Start wireshark and select "Loopback lo" for network interface. This means only 
 
 ### 2. Adding Lua Script
 Select "Wireshark" -> "About Wireshark" -> "Folders" -> "Personal Lua Plugins". This states the correct folder to place lua custom script. Place the lua custom script "mongodb.lua" in the folder stated.  
+
 ![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/lua_scripts_folder.jpg)
 
 ### 3. Reloading Lua Plugin
 Reload the lua plugin by clicking
+
 <img src="./images/reload_plugin.jpg" style="width:50%">
 
 ### 4. Viewing New Protocol Dissector
-By selecting "Analyse" -> "Enable Protocols", you should be able to search for the newly loaded protocol "MONGODB" with description "MongoDB Protocol2". 
+By selecting "Analyse" -> "Enable Protocols", you should be able to search for the newly loaded protocol "MONGODB" with description "MongoDB Protocol2".
+
 ![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/enable_protocols.jpg)
 
 ### 5. Viewing Filtered Packets
 Similarly, in the main GUI, you should be able to search for the MONGODB packets from port 27017 detected by the custom lua script.
+
 ![alt text](https://github.com/cyberbeam524/scaling-fishstick/blob/main/images/mongodb_packets.jpg)
 
 To trigger some mongodb packets to be sent, enter this command in terminal:
@@ -32,6 +36,7 @@ python insert_mongo.py
 
 ### 6. Viewing Packet's Decoded Buffer
 Double click on a row and you should be able to see the details of that packet as described by the custom lua script.
+
 <img src="./images/detailed_packets.jpg" style="width:50%">
 
 
